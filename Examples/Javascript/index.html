@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .smallImages {
+            width: 100; height: 100;
+            border: 2px solid black;
+            padding: 2px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id = "c1" style = "border:2px solid black" width = "400" height = "400"></canvas>
+    <script type = 'text/javascript'>
+        // getContext('2d') gives the canvas object, so that we can access its member
+        let ctx = document.getElementById('c1').getContext('2d');
+        // fillRect(x, y, w, h)
+        ctx.fillRect(50, 50, 50, 50);
+        ctx.fillStyle = 'red';
+        ctx.fillRect(100, 100, 50, 50);
+        // beginPath() to create an arc
+        ctx.beginPath();
+        // arc(x, y, r, start, end, true/false): true means anti-clockwise
+        ctx.arc(200, 200, 25, 0, Math.PI, true); // Math.PI means 180 degree
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(200, 200, 20, 0, Math.PI, true);
+        ctx.fillStyle = 'yellow';
+        ctx.fill();
+    </script>
+</body>
+</html>
