@@ -1,0 +1,15 @@
+<div>
+  <h1>This is Root component</h1>
+  <h2>Title: {{title}}</h2>
+  <h2>Name: {{name}}</h2>
+  
+  <hr />
+  <h2>Let us iterate the array using ngFor</h2>
+  <ul>
+    <li *ngFor = "let i of items">{{i}}</li>  
+  </ul>
+  <h2>Let us iterate the users array</h2>
+  <div *ngFor = "let u of users">
+    Hello {{u.name}}, your age is {{u.age}}
+  </div>
+</div>
