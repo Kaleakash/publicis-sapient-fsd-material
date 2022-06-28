@@ -2,8 +2,12 @@ package com.example.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.model.Account;
+import com.example.model.utility.AccountFaker;
 
 @RestController
 @RequestMapping("/account")
@@ -16,5 +20,9 @@ public class AccoutController {
 	public String greet() {
 		System.out.println("Request arrived at "+port+"!");
 		return "Hello! this is Account Microservice";
+	}
+	@GetMapping("/{number}")
+	public Account getAccount(@PathVariable("number") int number) {
+		return AccountFaker.fetchFakeAccounts(number);
 	}
 }
